@@ -3,8 +3,19 @@
 @section('title', 'Importar Arquivo JSON')
 
 @section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="card shadow-sm">
+
     <div class="card-header bg-primary text-white">
+
         <h5>Importar Documentos JSON</h5>
     </div>
     <div class="card-body">
