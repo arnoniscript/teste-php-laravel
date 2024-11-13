@@ -2,17 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\ImportController;
 
+Route::get('import/upload', [ImportController::class, 'showUploadForm'])->name('import.upload');
+Route::post('import/import', [ImportController::class, 'import'])->name('import.import');
+Route::get('import/queue', [ImportController::class, 'showQueueProcessing'])->name('import.queue');
+Route::post('import/processQueue', [ImportController::class, 'processQueue'])->name('import.processQueue');
 Route::get('/', function () {
     return view('welcome');
 });
