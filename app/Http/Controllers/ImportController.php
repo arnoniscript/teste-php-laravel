@@ -31,7 +31,6 @@ class ImportController extends Controller
                 throw new Exception(__('messages.json_parse_error', ['error' => json_last_error_msg()]));
             }
 
-            // Validações de estrutura e tipos dos dados do JSON
             $this->validateJsonStructure($data);
 
             $exercicio = $data['exercicio'];
@@ -51,7 +50,9 @@ class ImportController extends Controller
 
     public function showQueueProcessing()
     {
-        return view('import.queue');
+        $jobCount = DB::table('jobs')->count();
+
+        return view('import.queue', compact('jobCount'));
     }
 
     public function processQueue()
@@ -71,8 +72,6 @@ class ImportController extends Controller
     }
 
     /**
-     * Valida a estrutura do JSON e tipos de dados dos campos obrigatórios.
-     *
      * @param array $data
      * @throws Exception
      */
