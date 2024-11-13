@@ -13,5 +13,7 @@ class Document extends Model
         'category_id',
         'title',
         'contents',
+        'exercicio',
+
     ];
 }

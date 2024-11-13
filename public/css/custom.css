@@ -1,0 +1,38 @@
+
+ body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Navbar personalizada */
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff !important; 
+}
+
+.nav-link:hover {
+    color: #d3d3d3 !important; 
+}
+
+.alert {
+    margin-top: 1rem;
+}
